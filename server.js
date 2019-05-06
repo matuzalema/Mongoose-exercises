@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/nodeappdatabase', {
+mongoose.connect('mongodb+srv://Jadwiga:Jadwiga123@cluster0-rclyh.mongodb.net/test?retryWrites=true', {
     useMongoClient: true
 });
 
@@ -150,7 +150,7 @@ Promise.all([kenny.save(), mark.save(), benny.save()])
     .then(findSpecificRecord)
     .then(updadeUserPassword)
     .then(updateUsername)
-    // .then(findMarkAndDelete)
-    // .then(findKennyAndDelete)
-    // .then(findBennyAndRemove)
+    .then(findMarkAndDelete)
+    .then(findKennyAndDelete)
+    .then(findBennyAndRemove)
     .catch(console.log.bind(console))
